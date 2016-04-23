@@ -4,6 +4,7 @@ var pikeStore = {
   maxCust: 88,
   avgCookie: 5.2,
   totals: [],
+  grandTotal: 0,
   hours: [
     "10am: ",
     "11am: ",
@@ -23,6 +24,7 @@ var pikeStore = {
   for(var j = 0; j < this.hours.length; j++) {
     var ran = Math.floor(this.getRandom() * this.avgCookie);
     this.totals.push(ran);
+    this.grandTotal += ran;
   }
   },
 
@@ -37,7 +39,11 @@ var pikeStore = {
     liEl.textContent = this.hours[i] + this.totals[i];
     ulEl.appendChild(liEl);
   }
+  var liMent = document.createElement('li');
+  liMent.textContent = "TOTALS " + this.grandTotal;
+  ulEl.appendChild(liMent);
   pEl.appendChild(ulEl);
+
   }
 };
 
