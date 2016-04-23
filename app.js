@@ -12,27 +12,29 @@ var pikeStore = {
     "2pm: ",
     "3pm: ",
     "4pm: ",
-    "5pm: ",
-    "6pm: "
+    "5pm: "
 ],
 
-  getRandom: function(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+  getRandom: function() {
+    return Math.random() * (this.maxCust - this.minCust) + this.minCust;
   },
 
   hourTotal: function() {
-  for(var j = 0; j < this.hours.length; j++)
-    var ran = this.getRandom * this.avgCookie;
+  for(var j = 0; j < this.hours.length; j++) {
+    var ran = Math.floor(this.getRandom() * this.avgCookie);
     this.totals.push(ran);
+  }
   },
 
   render: function() {
+  this.hourTotal();
   var pEl = document.getElementById("store_one");
   var ulEl = document.createElement('ul');
 
   for (var i = 0; i < this.hours.length; i++) {
     var liEl = document.createElement('li');
-    liEl.textContent = this.hours[i];
+    pEl.textContent = this.storeName;
+    liEl.textContent = this.hours[i] + this.totals[i];
     ulEl.appendChild(liEl);
   }
   pEl.appendChild(ulEl);
@@ -40,6 +42,6 @@ var pikeStore = {
 };
 
 
-pikeStore.getRandom(17, 88);
-pikeStore.hourTotal();
+// pikeStore.getRandom(17, 88);
+// pikeStore.hourTotal();
 pikeStore.render();
