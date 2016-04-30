@@ -1,0 +1,46 @@
+header {
+  border-style: solid;
+  border-width: 1px;
+  background-color: #17A5FF;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+#allH1,
+#allH2,
+#customFont,
+#standardFont,
+#footer,
+#links,
+#backgroundStuff,
+#buttons,
+#footer {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
+
+#backgroundColorBlock {
+  border-style: solid, 3px;
+  background-color: #197D8F;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+
+#footer {
+  background-color: #D26E00;
+}
+
+#backgroundColor {
+  border: solid, black;
+  border-radius: 5px;
+  color: #197D8F;
+}
