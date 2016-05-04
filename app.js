@@ -35,6 +35,14 @@ Store.prototype.hourTotal = function(arr, total, avg, rand, hour) {
 
 Store.prototype.render = function() {
   Store.prototype.grandTotal = this.hourTotal(this.totals, this.grandTotal, this.avgCookie, this.getRandom, hours);
+  var tableEl = document.getElementById('storeTable');
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEL.textCreate = 'testing';
+  trEl.appendChild(tdEl);
+  tableEl.appendChild(trEl);
+
+
   var pEl = document.getElementById(this.storeId);
   var ulEl = document.createElement('ul');
   pEl.textContent = this.storeName;
@@ -50,6 +58,7 @@ Store.prototype.render = function() {
   pEl.appendChild(ulEl);
 
 };
+
 
 var pikeStore = new Store('Pike Place', 17, 88, 5.2, 'pikeplace');
 var seaTacStore = new Store('SeaTac Airport', 6, 24, 1.2, 'seaTacStore');
