@@ -6,6 +6,21 @@
   </head>
   <body>
     <h1>Cookie Data</h1>
+    <form id="tableForm">
+      <fieldset>
+        <legend>Add New</legend>
+        <input type="text" id="storeName" placeholder="Store Name" />
+        <input type="number" id="minCustomers" placeholder="Minimum Customers" />
+        <input type="number" id="maxCustomers" placeholder="Maximum Customers"  />
+        <input type="number" id="avgCookies" placeholder="Average Cookies"  />
+        <input type="submit" value="Submit" id="submit" />
+      </fieldset>
+    </form>
+    <section>
+      <table id="storeTable">
+
+      </table>
+    </section>
     <section id="allStores">
       <p id = "pikeplace"></p>
       <p id = "seaTacStore"></p>
