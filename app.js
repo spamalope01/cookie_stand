@@ -22,6 +22,7 @@ function Store (storeName, minCust, maxCust, avgCookie, id) {
   this.totals = [];
   this.grandTotal = 0;
   this.storeId = stores.push(this);
+  Store.renderStore(tableView, this);
 };
 
 Store.prototype.getRandom = function(min, max) {
@@ -34,7 +35,8 @@ Store.hourTotal = function(obj) {
     obj.totals.push(monkey);
     obj.grandTotal += monkey;
   }
-  return Store.grandTotal;
+  // Store.prototype.grandTotal = Store.hourTotal(this.totals, this.grandTotal, this.avgCookie, this.getRandom, hours);
+  // return Store.grandTotal;
 };
 
 (Store.render = function() {
@@ -44,13 +46,17 @@ Store.hourTotal = function(obj) {
   rowOne.setAttribute('id', 'storeHours');
   var emptyEl = document.createElement('th');
   rowOne.appendChild(emptyEl);
-  for(d = 0; d < hours.legth; d++) {
-    var tableHours = document.createElement('td') + hours[i];
-    rowOne.appendChild(td);
+  for(var d = 0; d < hours.length; d++) {
+    var tableHours = document.createElement('td');
+    tableHours.textContent = hours[d];
+    console.log(tableHours);
+    rowOne.appendChild(tableHours);
   }
   var rowOneTotals = document.createElement('th');
+  rowOneTotals.textContent = "Totals";
   rowOne.appendChild(rowOneTotals);
   tableView.appendChild(rowOne);
+  document.getElementById('theTable').appendChild(tableView);
 })();
 
 Store.renderStore = function(tbl, store) {
@@ -70,7 +76,6 @@ Store.renderNew = function(name, minimum, maximum, average) {
   newStore.renderStore('theGrid', Store);
 };
 
-Store.prototype.grandTotal = Store.hourTotal(this.totals, this.grandTotal, this.avgCookie, this.getRandom, hours);
 //
 //   var pEl = document.getElementById(this.storeId);
 //   var ulEl = document.createElement('ul');
@@ -93,6 +98,7 @@ var seaTacStore = new Store('SeaTac Airport', 6, 24, 1.2, 'seaTacStore');
 var southCenterStore = new Store('South Center', 11, 38, 1.9, 'southCtrStore');
 var bellevueSqStore = new Store('Bellevue Square', 20, 48, 3.3, 'bellSqStore');
 var alkiStore = new Store('Alki', 3, 24, 2.6, 'alki_Store');
+
 
 // var stores = [
 //   pikeStore,
