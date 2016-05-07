@@ -29,7 +29,6 @@ Store.prototype.getRandom = function(min, max) {
   return Math.random() * (max - min) + min;
 };
 
-
 Store.hourTotal = function(obj) {
   for(var j = 0; j < hours.length; j++) {
     var monkey = Math.floor(obj.getRandom(obj.minCust, obj.maxCust)) * obj.avgCookie;
@@ -57,7 +56,6 @@ Store.hourTotal = function(obj) {
   document.getElementById('theTable').appendChild(tableView);
 })();
 
-// should be creating each store row, displaying the store name and the values for hourly cookies.
 Store.renderStore = function(tbl, store) {
   Store.hourTotal(store);
   var storeRows = document.createElement('tr');
@@ -81,9 +79,7 @@ var southCenterStore = new Store('South Center', 11, 38, 1.9, 'southCtrStore');
 var bellevueSqStore = new Store('Bellevue Square', 20, 48, 3.3, 'bellSqStore');
 var alkiStore = new Store('Alki', 3, 24, 2.6, 'alki_Store');
 
-
 // BELOW HERE WE PUT NEW STORE DATA VIA INPUT FORMS.
-
 
 Store.renderNew = function(obj) {
   var newRow = document.createElement('tr');
@@ -112,41 +108,3 @@ formEl.addEventListener('submit', function(event) {
   Store.hourTotal(newShop);
   Store.renderNew(newShop);
 });
-
-
-//
-
-
-
-
-
-// Create new method, store.renderNew = function(obj) { (this makes it part of the constructor)
-//   create a row, add a name, add data from the hours, add a total, append
-// then append the new row to the table.
-// }
-
-// create a variable (formEl) and store the form ID in it
-// this will be an event handler, formEl.addEventListener('submit', function(event))
-// prevent default;
-// var  newName, newMin, newMax, newAvg = parseInt(event.target.newStoreLocaiton.value) DON'T DO FOR STORE NAME, JUST FOR MIN, MAX AND AVG. do parseFloat on the AVG.   (newstorelocation is an id corresponding with that element on the form...so i need to make sure i give/use the id's on each field within the form here. so each variable -newmin, newmax, etc - will be it's own line with event.target.id.value)
-
-// var newShop = new Store(newStoreName, newMinCust...whatever those variables just above - line 154 - are)
-// newShop.hourTotal (to generate the hourly totals)();
-// take this newShop new object and hand it into the render method
-// Store.renderNew(newShop);
-
-// DON'T FORGET TO PARSEINT ON THE MIN, MAX AND AVG WHEN TEXTCONTENTING THEM.  PARSEINT WILL GO AFTER THE = ON TEXTCONTENT.
-
-// THEN APPEND EVEYRHING TO THE ROWS AND THEN EVERYTHING TO THE TABLE.
-
-
-// var stores = [
-//   pikeStore,
-//   alkiStore,
-//   seaTacStore,
-//   bellevueSqStore,
-//   southCenterStore
-// ];
-// for(var k = 0; k < stores.length; k++) {
-//   stores[k].render();
-// }
