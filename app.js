@@ -67,12 +67,10 @@ Store.renderStore = function(tbl, store) {
   for(hour in hours) {
     var storeData = document.createElement('td');
     storeData.textContent = Math.floor(store.totals[hour]);
-    console.log(storeData);
     storeRows.appendChild(storeData);
   }
   var storeRowsTotals = document.createElement('th');
   storeRowsTotals.textContent = Math.floor(store.grandTotal);
-  console.log(storeRowsTotals);
   storeRows.appendChild(storeRowsTotals);
   tbl.appendChild(storeRows);
 };
@@ -85,21 +83,42 @@ var alkiStore = new Store('Alki', 3, 24, 2.6, 'alki_Store');
 
 
 // BELOW HERE WE PUT NEW STORE DATA VIA INPUT FORMS.
+
+
 Store.renderNew = function(obj) {
   var newRow = document.createElement('tr');
-  var newStoreNameTd = document.createElement('td');
-  newStoreNameTd.textContent = obj.name;
-  newRow.appendChild(newStoreNameTd);
+  var newStoreNameTh = document.createElement('th');
+  newStoreNameTh.textContent = obj.name;
+  newRow.appendChild(newStoreNameTh);
   for(hour in hours) {
     var newTdNewStore = document.createElement('td');
-    newTdNewStore.textContent = obj.totals[hour];
+    newTdNewStore.textContent = Math.floor(obj.totals[hour]);
     newRow.appendChild(newTdNewStore);
   }
-  var newTotalTd = document.createElement('td');
-  newTotalTd.textContent = obj.grandTotal;
-  newRow.appendChild(newTotalTd);
-
+  var newTotalTh = document.createElement('th');
+  newTotalTh.textContent = Math.floor(obj.grandTotal);
+  newRow.appendChild(newTotalTh);
 };
+
+var formEl = document.getElementById('tableForm');
+formEl.addEventListener('submit', function(event) {
+  event.preventDefault();
+  var newName = event.target.storeName.value;
+  var newMin = parseInt(event.target.minCustomers.value);
+  var newMax = parseInt(event.target.maxCustomers.value);
+  var newAvg = parseInt(Math.floor(event.target.avgCookies.value));
+  var newShop = new Store(newName, newMin, newMax, newAvg);
+  console.log(newShop);
+  Store.hourTotal(newShop);
+  Store.renderNew(newShop);
+});
+
+
+//
+
+
+
+
 
 // Create new method, store.renderNew = function(obj) { (this makes it part of the constructor)
 //   create a row, add a name, add data from the hours, add a total, append
