@@ -2,32 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Pat's Salmon Cookies</title>
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
   </head>
+  <header>
+    <div id="mainLogo">
+      <h1>Pat's Best Salmon Cookies</h1>
+      <img src="images/salmonMain.png" alt="" id="mainFishImg"/>
+      <h3>All the thrills, none of the gills!</h3>
+      <nav id="globalNav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="swag.html">Swag</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </div>
+  </header>
   <body>
-    <h1>Cookie Data</h1>
-    <form id="tableForm">
-      <fieldset>
-        <legend>Add New</legend>
-        <input type="text" id="storeName" placeholder="Store Name" />
-        <input type="number" id="minCustomers" placeholder="Minimum Customers" />
-        <input type="number" id="maxCustomers" placeholder="Maximum Customers"  />
-        <input type="number" id="avgCookies" placeholder="Average Cookies"  />
-        <input type="submit" value="Submit" id="submit" />
-      </fieldset>
-    </form>
-    <section>
-      <table id="storeTable">
-
-      </table>
+    <section id='greeting'>
+      <h2>Welcome to Pat's!</h2>
+      <p id="intro">
+        We're so glad you're here! Our goal is to provide you with the greatest fish based cookies anywhere in the world.  We started three years ago with just a mound of salmon, some batter and a dream. A dream that one day little people just like yourself would swim upstream to indulge in our fishy goodness!
+        <br />
+        Seriously, these cookies are good.
+        <br />
+        So come on in, take a look around.  Order some swag and get to know us.  We ahve several locations to suit your fish cookie needs.
+      </p>
     </section>
-    <section id="allStores">
-      <p id = "pikeplace"></p>
-      <p id = "seaTacStore"></p>
-      <p id = "southCtrStore"></p>
-      <p id = "bellSqStore"></p>
-      <p id = "alki_Store"></p>
-    </section>
+    <section id='featuredCoookie'>
+      <h2>Our Featured Cookie</h2>
+      <img src="" alt="" />
+      <p>
+        <span id='randall'>The Randall</span>
+        - Named after our uncle Randall who back in the fall of 1978 rose to fame as the Upper South Northwest Regional Champion of Salmon punching.  The guy had a hell of a right cross that just sent the fish a'flyin!  And this cookie will do the same to you! Feel like you've been smacked in the gob by our uncle Randall!
+      </p>
+      <input type="button" name="name" value="Give 'em to me, yo!'">
     <script src="app.js" type="text/javascript"></script>
   </body>
+  <footer>
+    <p>&copy;Toonces Media, LLC</p>
+    <ul class="address">
+      <li>2901 3rd Ave</li>
+      <li>#300</li>
+      <li>Seattle, WA 98121</li>
+      <li>555-666-4488</li>
+    </ul>
+    <p>Follow Us!</p>
+    <img class="socmedia" src="images/Facebook icon.png" alt="" />
+    <img class="socmedia" src="images/Insta Icon.png" alt="" />
+    <img class="socmedia" src="images/Twitter icon.png" alt="" />
+  </footer>
 </html>
