@@ -3,83 +3,117 @@
   <head>
     <meta charset="utf-8">
     <title>Salmon Cookies Style Guide</title>
-    <link rel="stylesheet" href="stylesheet.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="CSS/stylesheet.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <header>
-    <h2>Header Section</h2>
-      <code>Font: Georgia;
-        Font-size: 12px;
-        <div id = 'headColor'>
-          Background-color: #17A5FF;
+  <body>
+    <header>
+      <div id="topNav">
+        <nav id="globalNav">
+          <a class="navLink" href="../index.html">Home</a>
+          <a class="navLink" href="Styleguide.html">Styles</a>
+          <a class="navLink" href="">Swag</a>
+          <a class="navLink" href="sales.html">Sales</a>
+        </nav>
+      </div>
+      <h2>Body</h2>
+      <code>
+        <div id="headColor">
+          Background-color: #bfd8d2;
         </div>
       </code>
-    <h2>Logo</h2>
+      <h2>Logo</h2>
       <code>
         Image: large salmon;
-        Height: 100px;
-        Width: 100px;
+        Width: 300px;
       </code>
-  </header>
-  <body>
-    <section id = "allH1">
+    </header>
+    <section id="allH1">
       <h2>H1</h2>
-      <code>Font-size: 20px;</code>
+      <code>
+        Font-Family: 'Source Sans Pro', sans-serif;
+        Font-size: 32px;</code>
     </section>
-    <section id = "allH2">
+    <section id="allH2">
       <h2>H2</h2>
-      <code>Font size: 15px;</code>
+      <code>
+        Font-Family: 'Source Sans Pro', sans-serif;
+        Font size: 15px;</code>
     </section>
-    <section id = 'allH3'>
+    <section id="allH3">
       <h2>H3</h2>
-      <code>Font-size: 10px;</code>
+      <code>
+        Font-Family: 'Source Sans Pro', sans-serif;
+        Font-size: 10px;</code>
     </section>
-    <section id = 'customFont'>
+    <section id="customFont">
       <h2>Custom Font</h2>
-      <p>Cookie (Custom Google Font)<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'></p>
+      <code>All P tags:
+        Font-Family: 'Source Sans Pro', sans-serif;
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css"></code>
     </section>
-    <section id = 'standardFont'>
+    <section id="standardFont">
       <h2>Standard Font - Data</h2>
-      <code>Font: Georgia
-      <div id = 'standardColor'>
+      <code>Font: Sand-Serif;
+      <div id="standardColor">
         Color: Black
       </div>
       </code>
       <h2>Standard Font - Text</h2>
-      <code>Font: Verdana</code>
-      <div id = 'standard2'>Color: #191200</div>
+      <code>Font: Sans-Serif;</code>
+      <div id="standard2">Color: #191200</div>
     </section>
-    <section id = 'links'>
+    <section id="links">
       <h2>Link Font</h2>
-      <div id = 'linkColor'>Color: #318ADE</div>
-      <h2>Visited Link Font</h2>
-      <div id = 'visitedColor'>Color: #00912D</div>
       <h2>Mouse Over Link</h2>
-      <div id = 'mouseColor'>Color: #b21f0e</div>
+      <div id="mouseColor">Color: #318ADE</div>
     </section>
-    <section id = 'backgroundStuff'>
+    <section id="backgroundStuff">
       <h2>Background Image</h2>
       <code>None</code>
       <h2>Background Color</h2>
-      <div id = 'backgroundColorBlock'>#197D8F</div>
-      <!--(for my reference later).gradient {
-      background-image:
-      linear-gradient(
-      #197D8F, #28C9E5
-      );
-    }-->
+      <div id ="backgroundColorBlock">#bfd8d2</div>
     </section>
-    <section id = 'buttons'>
+    <section id="buttons">
       <h2>Buttons</h2>
-      <p>To be determined...</p>
+      /*button styles from css tricks.com*/
+    <code> border-top: 1px solid #97a7f7;
+    background: #a5d665;
+    background: -webkit-gradient(linear, left top, left bottom, from(#539c3e), to(#a5d665));
+    background: -webkit-linear-gradient(top, #539c3e, #a5d665);
+    background: -moz-linear-gradient(top, #539c3e, #a5d665);
+    background: -ms-linear-gradient(top, #539c3e, #a5d665);
+    background: -o-linear-gradient(top, #539c3e, #a5d665);
+    padding: 10px 20px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 15px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+
+    :hover
+    border-top-color: #283978;
+    background: #283978;
+    color: #ccc;
+
+    active
+    border-top-color: #1b435e;
+    background: #1b435e;</code>
     </section>
 
+    <footer id="footer">
+      <p>Copyright by Toonces</p>
+      <code>
+        Font: Georgia
+        Font-size: 10px
+      </code>
+      <div id="footColor">Color: #bfd8d2</div>
+    </footer>
   </body>
-  <footer id = "footer">
-  	<p>Copyright by Toonces</p>
-  	<code>
-  		Font: Georgia
-  		Font-size: 10px
-	  </code>
-    <div id ='footColor'>Color: #003B5E</div>
-  </footer>
 </html>
